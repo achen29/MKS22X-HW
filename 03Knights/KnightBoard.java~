@@ -1,0 +1,12 @@
+public class KnightBoard{
+    private int[][]board;
+    private int row;
+    private int col;
+    private string str ="";
+    public void solve(){
+	return solveH(0,0,1);
+    }
+    public boolean solveH(int r, int c, int level){
+	
+    }
+}
