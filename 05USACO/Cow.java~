@@ -1,0 +1,34 @@
+import java.util.*;
+import java.io.*;
+public class Cow{
+    private String[][]graze;
+    public int N,M,T,R1,C1,R2,C2;
+    public Cow (String fileName){
+	try {
+	    File data = new File(fileName);
+	    getInfo(data);
+	} catch (Exception e) {
+	    System.exit(0);
+	}
+    }
+    private void getInfo (File data) throws FileNotFoundException {
+	
+	Scanner skan = new Scanner(data);
+	N = Integer.parseInt(skan.next());
+	M = Integer.parseInt(skan.next());
+	T = Integer.parseInt(skan.next());
+	for(int i = 0; i < N * M; i ++){
+	    graze[i/M][i%M] = skan.next();
+	}
+	R1 = Integer.parseInt(skan.next());
+	C1 = Integer.parseInt(skan.next());
+	R2 = Integer.parseInt(skan.next());
+	C2 = Integer.parseInt(skan.next());
+	for(int i = 0; i < N * M; i ++){
+	    int n = 0;
+	    if (i/M + 1 < N){
+		n = n + graze[i/M + 1][i%M];
+	    }
+	}
+    }
+}
