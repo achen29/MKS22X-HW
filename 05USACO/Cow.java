@@ -1,8 +1,8 @@
 import java.util.*;
 import java.io.*;
 public class Cow{
-    private String[][]graze;
     private int[][]field;
+    private String[][]graze;
     public int N,M,T,R1,C1,R2,C2;
     public Cow (String fileName){
 	try {
@@ -13,11 +13,20 @@ public class Cow{
 	}
     }
     private void getInfo (File data) throws FileNotFoundException {
-
-	for(int i = 0; i < N * M; i ++){
+	Scanner skan = new Scanner(data);
+	N = Integer.parseInt(skan.next());
+	M = Integer.parseInt(skan.next());
+	T = Integer.parseInt(skan.next());
+	field = new int[N][M];
+	graze = new String[N][M];
+	for (int i = 0; i < N * M; i ++){
 	    field[i/M][i%M] = 0;
+	    graze[i/M][i%M] = skan.next();
 	}
-	field[R1][C1] = 1;
+	R1 = Integer.parseInt(skan.next());
+	C1 = Integer.parseInt(skan.next());
+	R2 = Integer.parseInt(skan.next());
+	C2 = Integer.parseInt(skan.next());
 	for(int d = 0; d < T; d ++){
 	    for(int i = 0; i < N * M; i ++){
 		int n = 0;
@@ -39,14 +48,17 @@ public class Cow{
 		field[i/M][i%M] = n;
 	    }
 	}
+	
     }
     public int solve(){
 	return field[R2][C2];
     }
     public static void main (String[] args) {
 	Cow dank = new Cow("input1.txt");
-	System.out.println(1);
-	System.out.println(dank.solve());
+	System.out.println(dank.N);
+	System.out.println(dank.M);
+	System.out.println(dank.T);
+	//System.out.println(dank.solve());
 
     }
 }
