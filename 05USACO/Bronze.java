@@ -1,13 +1,13 @@
 import java.util.*;
 import java.io.*;
 
-public class Lake {
+public class Bronze {
 
     public int R, C, E, N;
-    private int[][] lake;
+    private int[][] Bronze;
     public String[] orders;
 
-    public Lake (String fileName) {
+    public Bronze (String fileName) {
 	try {
 	    File data = new File(fileName);
 	    getInfo(data);
@@ -26,10 +26,10 @@ public class Lake {
 	C = Integer.parseInt(skan.next());
 	E = Integer.parseInt(skan.next());
 	N = Integer.parseInt(skan.next());
-	lake = new int[R][C];
+	Bronze = new int[R][C];
 	for(int i = 0; i < R; i++){
 	     for (int count = 0; count < C; count++) {
-		lake[i][count] = Integer.parseInt(skan.next());
+		Bronze[i][count] = Integer.parseInt(skan.next());
 	    }
 	}
 	for(int i = 0; i < N; i ++){
@@ -56,14 +56,14 @@ public class Lake {
 	}
 	int highest = 0;
 	for(int i = 0; i < (r1)*(c1); i ++){
-	    if (lake[i/(c1) + row][i%(c1) + col] > highest){
-		highest = lake[i/(c1) + row][i%(c1) + col];
+	    if (Bronze[i/(c1) + row][i%(c1) + col] > highest){
+		highest = Bronze[i/(c1) + row][i%(c1) + col];
 	    }
 	}
 	highest = highest - p;
 	for(int i = 0; i < (r1)*(c1); i ++){
-	    if (lake[i/(c1) + row][i%(c1) + col] > highest){
-		lake[i/(c1) + row][i%(c1) + col] = highest;
+	    if (Bronze[i/(c1) + row][i%(c1) + col] > highest){
+		Bronze[i/(c1) + row][i%(c1) + col] = highest;
 	    }
 	}
 	
@@ -71,8 +71,8 @@ public class Lake {
     private int solve(){
 	int sol = 0;
 	for(int i = 0; i < R * C; i++){
-	    if (lake[i/C][i%C] < E){
-		sol = sol + E - lake [i/C][i%C];
+	    if (Bronze[i/C][i%C] < E){
+		sol = sol + E - Bronze [i/C][i%C];
 	    }
 	}
 	return sol;
@@ -80,7 +80,7 @@ public class Lake {
 
     public String toString () {
 	String str = "";
-	for (int[] ary : lake) {
+	for (int[] ary : Bronze) {
 	    for (int num : ary) {
 		str += num + " ";
 	    }
@@ -91,7 +91,7 @@ public class Lake {
 
     public static void main (String[] args) {
 	
-	Lake dank = new Lake("input.txt");
+	Bronze dank = new Bronze("input.txt");
 	System.out.println(dank.solve()* 72 * 72);
 
     }
