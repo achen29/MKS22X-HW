@@ -1,10 +1,10 @@
 import java.util.*;
 import java.io.*;
-public class Cow{
+public class Silver{
     private int[][]field;
     private String[][]graze;
     public int N,M,T,R1,C1,R2,C2;
-    public Cow (String fileName){
+    public Silver (String fileName){
 	try {
 	    File data = new File(fileName);
 	    getInfo(data);
