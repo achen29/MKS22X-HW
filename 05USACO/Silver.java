@@ -87,7 +87,7 @@ public class Silver{
 	return field[R2-1][C2-1];
     }
     public static void main (String[] args) {
-	Cow dank = new Cow("input1.txt");
+	Silver dank = new Silver("input1.txt");
 	System.out.println(dank.toString());
 	System.out.println(dank.N);
 	System.out.println(dank.M);
