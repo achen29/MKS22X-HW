@@ -37,17 +37,21 @@ public class Quick{
     }
 
     private static int quickselectH(int[] data, int k, int start, int end){
-	if (start == end){
-	    return data[start];
-	}
-	int p = part(data,start,end);
-	if (p > k){
-	    return quickselectH(data,k,start,p);
-	}
-	if (p < k){
-	    return quickselectH(data,k,p,end);
-	}
-	return data[p];
+	Random Rundom = new Random();
+	int n = rundom.nextint(end - start);
+	/*
+while i<= gt
+if a[i] == v
+i++
+else if a[i] < v;
+swap(a,i,lt)
+i++
+lt++
+else 
+swap(a,i,gt)
+gt--
+	 */
+	    
     }
 
     public static void quicksort(int[] data){
