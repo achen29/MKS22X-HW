@@ -4,6 +4,7 @@ public class QueenBoard{
     private int solutionCount;
     public QueenBoard(int size){
 	board = new int[size][size];
+	solve();
     }
     private void addQueen(int x,int y){
 	board[x][y] = -2;
@@ -85,8 +86,7 @@ public class QueenBoard{
 	return b;
     }
     public static void main(String[] args){
-		QueenBoard n = new QueenBoard(10);
-		n.solve();
+		QueenBoard n = new QueenBoard(7);
 		System.out.println(n);
 		n.countSolutions();
 		System.out.println(n.getSolutionCount());
