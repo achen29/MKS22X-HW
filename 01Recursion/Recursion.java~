@@ -3,12 +3,6 @@ public class Recursion{
 	return "Alvin Chen";
     }
     public static double sqrt(double n){
-	if (n < 0){
-            throw new IllegalArgumentException();
-        }
-        if (n == 0){
-            return 0;
-        }
 	return sqrthelp(n,1);
     }
     public static boolean closeEnough(double m, double n){
