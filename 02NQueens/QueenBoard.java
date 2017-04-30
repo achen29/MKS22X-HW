@@ -4,6 +4,7 @@ public class QueenBoard{
     private int solutionCount;
     public QueenBoard(int size){
 	board = new int[size][size];
+	solutionCount = -1;
 	solve();
     }
     private void addQueen(int x,int y){
