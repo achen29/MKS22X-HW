@@ -1,14 +1,13 @@
 import java.util.*;
 
 public class Quick{
+public 
 
     public static int part(int[] data, int start, int end){
 	Random rundom = new Random();
 	int n = (rundom.nextInt(end - start) + rundom.nextInt(end - start) + rundom.nextInt(end - start) + 3 * start) / 3;
-	System.out.println(n);
 	int[] copy = data.clone();
 	int m = copy[n];
-	System.out.println(m);
 	int left = start;
 	int right = end;
 	for (int i = 0; i <= end - start; i ++){
@@ -16,19 +15,14 @@ public class Quick{
 		if (copy[i + start] > m){
 		    data[right] = copy[i + start];
 		    right -= 1;
-		    System.out.println("R" + right);
 		}
 		if (copy[i + start] <= m){
 		    data[left] = copy[i + start];
 		    left += 1;
-		    System.out.println("L" + left);
 		}
 	    }
 	}
 	data[right] = m;
-	System.out.println(right);
-	System.out.println(left);
-	System.out.println(toString(data));
 	return right;
     }
 
