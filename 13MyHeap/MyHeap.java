@@ -87,21 +87,4 @@ public class MyHeap{
 
 	return temp;
     }
-
-    public static void main(String[] args){
-	MyHeap x = new MyHeap();
-	x.add("A");
-	System.out.println(x.toString());
-	x.add("D");
-	System.out.println(x.toString());
-	x.add("B");
-	System.out.println(x.toString());
-	x.add("C");
-	System.out.println(x.toString());
-	x.add("A");
-	System.out.println(x.toString());
-
-
-
-    }
 }
