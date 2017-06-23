@@ -68,7 +68,7 @@ public class Bronze {
 	}
 	
     }
-    public int solve(){
+    private int solve(){
 	int sol = 0;
 	for(int i = 0; i < R * C; i++){
 	    if (Bronze[i/C][i%C] < E){
